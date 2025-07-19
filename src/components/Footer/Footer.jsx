@@ -62,6 +62,19 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      {/* Dynamic Background */}
+      <div className="footer-background">
+        <div className="footer-bg-gradient"></div>
+        <div className="footer-floating-elements">
+          {[...Array(10)].map((_, i) => (
+            <div 
+              key={i} 
+              className={`footer-floating-dot footer-dot-${i}`}
+            ></div>
+          ))}
+        </div>
+      </div>
+
       <div className="footer-container">
         {/* Main Footer Content */}
         <div className="footer-main">
@@ -105,7 +118,7 @@ const Footer = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" strokeWidth="2"/>
                   <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
                 </svg>
-                <span>Sale, Maroc 🇲🇦</span>
+                <span>Salé, Maroc 🇲🇦</span>
               </div>
             </div>
           </div>

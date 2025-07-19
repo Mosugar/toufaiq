@@ -11,12 +11,22 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
+      {/* Dynamic Background */}
       <div className="hero-background">
         <img 
           src="https://res.cloudinary.com/dylpck2et/image/upload/v1752879892/TL_GLOBAL_lxew7e.jpg" 
           alt="TL GLOBAL - Aménagement intérieur de luxe"
           className="hero-image"
         />
+        <div className="hero-bg-gradient"></div>
+        <div className="hero-floating-elements">
+          {[...Array(10)].map((_, i) => (
+            <div 
+              key={i} 
+              className={`hero-floating-dot hero-dot-${i}`}
+            ></div>
+          ))}
+        </div>
       </div>
 
       <div className="hero-content">

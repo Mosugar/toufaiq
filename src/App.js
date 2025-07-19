@@ -3,7 +3,10 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Services from './components/Services/Services.jsx';
+import About from './components/about/About.jsx';
+import Contact from './components/contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
+
 
 function App() {
   return (
@@ -15,6 +18,7 @@ function App() {
       <div className="section-transition"></div>
       
       <Services />
+      <About />
       
       {/* Placeholder sections for future content */}
       <section id="projects" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
@@ -31,6 +35,7 @@ function App() {
         <h2>Contact</h2>
         <p>Formulaire de contact à venir...</p>
       </section>
+      <Contact />
       <Footer />
     </div>
   );
