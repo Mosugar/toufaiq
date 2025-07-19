@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Services from './components/Services/Services.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <h2>Contact</h2>
         <p>Formulaire de contact à venir...</p>
       </section>
+      <Footer />
     </div>
   );
 }
