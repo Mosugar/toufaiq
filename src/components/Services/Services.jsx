@@ -77,12 +77,51 @@ const Services = () => {
     }
   ];
 
+  // Construction tools for animated background
+  const constructionTools = [
+    { name: 'hammer', symbol: '🔨', className: 'tool-hammer' },
+    { name: 'wrench', symbol: '🔧', className: 'tool-wrench' },
+    { name: 'drill', symbol: '🔧', className: 'tool-drill' },
+    { name: 'ruler', symbol: '📏', className: 'tool-ruler' },
+    { name: 'saw', symbol: '🪚', className: 'tool-saw' },
+    { name: 'level', symbol: '📐', className: 'tool-level' }
+  ];
+
   return (
     <section className="services" id="services">
+      {/* Animated Construction Canvas Background */}
+      <div className="services-canvas">
+        {/* Blueprint Grid */}
+        <div className="blueprint-grid"></div>
+        
+        {/* Main Background */}
+        <div className="services-background"></div>
+        
+        {/* Large Background Text */}
+        <div className="services-background-text">SERVICES</div>
+        
+        {/* Construction Elements */}
+        <div className="construction-elements">
+          {constructionTools.map((tool, index) => (
+            <div key={index} className={`construction-tool ${tool.className}`}>
+              {tool.symbol}
+            </div>
+          ))}
+        </div>
+        
+        {/* Floating Particles */}
+        <div className="construction-particles">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className={`particle particle-${i}`}></div>
+          ))}
+        </div>
+      </div>
+
       <div className="services-container">
         {/* Section Header */}
         <div className="services-header">
           <div className="services-badge">
+            <div className="badge-dot"></div>
             <span>Nos Expertises</span>
           </div>
           <h2 className="services-title">

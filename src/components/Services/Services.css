@@ -1,429 +1,705 @@
-/* Services Section */
+/* Services Section - Dark Modern Theme with Construction Canvas */
 .services {
-    padding: 8rem 0;
-    background: #032a87;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #032a87 0%, #0801fd 50%, #2c3e50 100%);
+  overflow: hidden;
+  padding: 8rem 0;
+  color: white;
+}
+
+/* Animated Construction Canvas Background */
+.services-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.construction-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Construction Tools Animation */
+.construction-tool {
+  position: absolute;
+  color: rgba(231, 231, 2, 0.1);
+  animation: constructionFloat 20s linear infinite;
+}
+
+.tool-hammer {
+  top: 10%;
+  left: 5%;
+  font-size: 3rem;
+  animation-delay: 0s;
+}
+
+.tool-wrench {
+  top: 30%;
+  right: 10%;
+  font-size: 2.5rem;
+  animation-delay: -5s;
+}
+
+.tool-drill {
+  bottom: 20%;
+  left: 15%;
+  font-size: 3.5rem;
+  animation-delay: -10s;
+}
+
+.tool-ruler {
+  top: 60%;
+  right: 20%;
+  font-size: 2rem;
+  animation-delay: -15s;
+}
+
+.tool-saw {
+  bottom: 40%;
+  right: 5%;
+  font-size: 3rem;
+  animation-delay: -7s;
+}
+
+.tool-level {
+  top: 80%;
+  left: 30%;
+  font-size: 2.5rem;
+  animation-delay: -12s;
+}
+
+@keyframes constructionFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.1;
   }
-  
-  .services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: 
-      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
-    pointer-events: none;
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-60px) rotate(180deg);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.1;
+  }
+}
+
+/* Blueprint Grid Animation */
+.blueprint-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(231, 231, 2, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 231, 2, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: blueprintMove 30s linear infinite;
+}
+
+@keyframes blueprintMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(50px) translateY(50px);
+  }
+}
+
+/* Floating Construction Particles */
+.construction-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(231, 231, 2, 0.4);
+  border-radius: 50%;
+  animation: particleFloat 15s infinite ease-in-out;
+}
+
+.particle-0 { top: 15%; left: 25%; animation-delay: 0s; }
+.particle-1 { top: 35%; left: 75%; animation-delay: -2s; }
+.particle-2 { top: 55%; left: 45%; animation-delay: -4s; }
+.particle-3 { top: 75%; left: 65%; animation-delay: -6s; }
+.particle-4 { top: 25%; left: 85%; animation-delay: -8s; }
+.particle-5 { top: 45%; left: 15%; animation-delay: -10s; }
+.particle-6 { top: 65%; left: 35%; animation-delay: -12s; }
+.particle-7 { top: 85%; left: 55%; animation-delay: -14s; }
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+    opacity: 0.4; 
+  }
+  50% { 
+    transform: translateY(-80px) scale(1.5); 
+    opacity: 1; 
+  }
+}
+
+/* Main Background Gradient */
+.services-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(231, 231, 2, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(231, 231, 2, 0.05) 0%, transparent 50%);
+  animation: gradientShift 25s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Large Background Text */
+.services-background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  font-size: clamp(8rem, 20vw, 25rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Services Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.services-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #e7e702;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.services-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 200;
+  line-height: 1.1;
+  color: white;
+  margin: 0 0 2rem 0;
+  letter-spacing: -1.5px;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.services-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 8rem;
+}
+
+/* Enhanced Service Card */
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(231, 231, 2, 0.05), transparent);
+  transition: left 0.6s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(231, 231, 2, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Service Icon */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 231, 2, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-icon::before {
+  opacity: 1;
+}
+
+.service-icon svg {
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.05);
+  background: rgba(231, 231, 2, 0.15);
+  border-color: rgba(231, 231, 2, 0.3);
+}
+
+.service-card:hover .service-icon svg {
+  color: #e7e702;
+  transform: scale(1.1);
+}
+
+/* Service Content */
+.service-content {
+  margin-bottom: 2.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem 0;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-feature {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+  width: 20px;
+  height: 20px;
+  color: #e7e702;
+  flex-shrink: 0;
+}
+
+/* Enhanced Service Footer */
+.service-footer {
+  margin-top: 2.5rem;
+}
+
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(231, 231, 2, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.service-btn:hover::before {
+  left: 100%;
+}
+
+.service-btn:hover {
+  background: rgba(231, 231, 2, 0.15);
+  border-color: rgba(231, 231, 2, 0.4);
+  color: #e7e702;
+  transform: translateX(5px);
+}
+
+.btn-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.service-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Enhanced CTA Section */
+.services-cta {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 32px;
+  padding: 5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(231, 231, 2, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -1px;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 3rem 0;
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s;
+}
+
+.cta-btn:hover::before {
+  left: 100%;
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #e7e702 0%, #d4d400 100%);
+  color: #032a87;
+  box-shadow: 0 8px 25px rgba(231, 231, 2, 0.3);
+}
+
+.cta-btn.primary:hover {
+  background: linear-gradient(135deg, #d4d400 0%, #c1c100 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(231, 231, 2, 0.4);
+}
+
+.cta-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.cta-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(231, 231, 2, 0.4);
+  color: #e7e702;
+  transform: translateY(-3px);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    padding: 6rem 0;
   }
   
   .services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 2;
+    padding: 0 1.5rem;
   }
   
-  /* Services Header */
-  .services-header {
-    text-align: center;
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
     margin-bottom: 6rem;
   }
   
-  .services-badge {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 2.5rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    text-transform: uppercase;
+  .services-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  .services-cta {
+    padding: 4rem 3rem;
+  }
+
+  .construction-tool {
+    font-size: 2rem;
+  }
+
+  .tool-hammer { font-size: 2.5rem; }
+  .tool-drill { font-size: 3rem; }
+  .tool-saw { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 0;
+  }
+  
+  .services-container {
+    padding: 0 1rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .service-card {
+    padding: 2.5rem;
   }
   
   .services-title {
-    font-size: 3.5rem;
-    font-weight: 200;
-    line-height: 1.1;
-    color: white;
-    margin: 0 0 2rem 0;
-    letter-spacing: -1.5px;
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
   
   .services-subtitle {
-    font-size: 1.3rem;
-    font-weight: 300;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 700px;
-    margin: 0 auto;
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  /* Services Grid */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2.5rem;
-    margin-bottom: 8rem;
-  }
-  
-  /* Service Card - Optimized for Performance */
-  .service-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    padding: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-  }
-  
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .service-card:hover::before {
-    opacity: 1;
-  }
-  
-  /* Service Icon - Simplified Animation */
-  .service-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, background 0.3s ease;
-    will-change: transform;
-  }
-  
-  .service-icon svg {
-    width: 32px;
-    height: 32px;
-    color: white;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover .service-icon {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
-  }
-  
-  .service-card:hover .service-icon svg {
-    transform: scale(1.05);
-  }
-  
-  /* Service Content */
-  .service-content {
-    margin-bottom: 2.5rem;
-  }
-  
-  .service-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
-    margin: 0 0 1.5rem 0;
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  .service-description {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 2rem 0;
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .service-feature {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  .feature-icon {
-    width: 20px;
-    height: 20px;
-    color: #4ade80;
-    flex-shrink: 0;
-  }
-  
-  /* Service Footer */
-  .service-footer {
-    margin-top: 2.5rem;
-  }
-  
-  .service-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.875rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    text-decoration: none;
-  }
-  
-  .service-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateX(4px);
-  }
-  
-  .btn-arrow {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-btn:hover .btn-arrow {
-    transform: translateX(3px);
-  }
-  
-  /* CTA Section */
-  .services-cta {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 32px;
-    padding: 5rem 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  
-  .services-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
-  }
-  
-  .cta-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .cta-title {
-    font-size: 2.5rem;
-    font-weight: 200;
-    color: white;
-    margin: 0 0 1.5rem 0;
-    letter-spacing: -1px;
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
-  
-  .cta-description {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 3rem 0;
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   }
   
   .cta-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.2rem 3rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .cta-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 0.5s;
+    max-width: 300px;
   }
   
-  .cta-btn:hover::before {
-    left: 100%;
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .construction-tool {
+    font-size: 1.5rem;
+  }
+
+  .services-background-text {
+    font-size: clamp(4rem, 15vw, 8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-header {
+    margin-bottom: 4rem;
   }
   
-  .cta-btn.primary {
-    background: white;
-    color: #032a87;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  .service-card {
+    padding: 2rem;
   }
   
-  .cta-btn.primary:hover {
-    background: #f8f9fa;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  .services-cta {
+    padding: 3rem 2rem;
   }
   
-  .cta-btn.secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+  .services-title {
+    font-size: clamp(1.5rem, 10vw, 2rem);
   }
   
-  .cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-3px);
+  .cta-title {
+    font-size: 1.8rem;
   }
-  
-  .btn-icon {
-    width: 20px;
-    height: 20px;
+
+  .construction-tool {
+    font-size: 1.2rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .services {
-      padding: 6rem 0;
-    }
-    
-    .services-container {
-      padding: 0 1.5rem;
-    }
-    
-    .services-grid {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-bottom: 6rem;
-    }
-    
-    .services-title {
-      font-size: 3rem;
-    }
-    
-    .services-cta {
-      padding: 4rem 3rem;
-    }
+
+  .services-background-text {
+    font-size: clamp(3rem, 12vw, 6rem);
   }
-  
-  @media (max-width: 768px) {
-    .services {
-      padding: 4rem 0;
-    }
-    
-    .services-container {
-      padding: 0 1rem;
-    }
-    
-    .services-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    .service-card {
-      padding: 2.5rem;
-    }
-    
-    .services-title {
-      font-size: 2.5rem;
-    }
-    
-    .services-subtitle {
-      font-size: 1.2rem;
-    }
-    
-    .cta-actions {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .cta-btn {
-      width: 100%;
-      max-width: 300px;
-    }
-    
-    .cta-title {
-      font-size: 2rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .services-header {
-      margin-bottom: 4rem;
-    }
-    
-    .service-card {
-      padding: 2rem;
-    }
-    
-    .services-cta {
-      padding: 3rem 2rem;
-    }
-    
-    .services-title {
-      font-size: 2rem;
-    }
-    
-    .cta-title {
-      font-size: 1.8rem;
-    }
-  }
+}

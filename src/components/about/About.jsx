@@ -20,7 +20,81 @@ const About = () => {
     }
   ];
 
-  const values = [];
+  // Design and construction tools for animated background
+  const designTools = [
+    {
+      name: 'paintbrush',
+      className: 'tool-paintbrush',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M20 10V8h-4V4h-2v4h-4V6H8v2H4v2h4v4H6v2h2v4h2v-4h4v2h2v-2h4v-2h-4v-4h2zm-6 4h-4v-4h4v4z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'palette',
+      className: 'tool-palette',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M12 3c-4.97 0-9 4.03-9 9 0 .83.15 1.65.44 2.4l-.19.19c-.78.78-.78 2.05 0 2.83.39.39.9.58 1.41.58s1.02-.19 1.41-.58l.19-.19c.75.29 1.57.44 2.4.44 4.97 0 9-4.03 9-9s-4.03-9-9-9zM8.5 8C9.33 8 10 8.67 10 9.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm7 0c.83 0 1.5.67 1.5 1.5S16.33 11 15.5 11 14 10.33 14 9.5 14.67 8 15.5 8zm-3.5 6.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'pencil',
+      className: 'tool-pencil',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'compass',
+      className: 'tool-compass',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 5-5v10zm6-5l-5 5V7l5 5z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'rollerbrush',
+      className: 'tool-rollerbrush',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M18 3H6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM6 11V5h12v6H6zm5 2v8h2v-8h-2z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'triangle',
+      className: 'tool-triangle',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M12 2L2 20h20L12 2zm0 3.99L18.99 18H5.01L12 5.99z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'protractor',
+      className: 'tool-protractor',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 2.85 1.2 5.41 3.11 7.24l1.42-1.42C5.1 16.46 4 14.32 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 2.32-1.1 4.46-2.53 5.82l1.42 1.42C20.8 17.41 22 14.85 22 12c0-5.52-4.48-10-10-10zm0 6l-4 4h8l-4-4z"/>
+        </svg>
+      )
+    },
+    {
+      name: 'spraypaint',
+      className: 'tool-spraypaint',
+      svg: (
+        <svg viewBox="0 0 24 24" fill="currentColor" width="100%" height="100%">
+          <path d="M18 9h-2V7c0-.55-.45-1-1-1h-2V4.5C13 3.67 12.33 3 11.5 3S10 3.67 10 4.5V6H8c-.55 0-1 .45-1 1v2H5c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1h13c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1zm-7 0V7h2v2h-2zm8-7h1v1h-1V2zm0 2h1v1h-1V4zm2-2h1v1h-1V2zm0 2h1v1h-1V4z"/>
+        </svg>
+      )
+    }
+  ];
 
   const team = [
     {
@@ -33,11 +107,63 @@ const About = () => {
 
   return (
     <section className="about" id="about">
+      {/* Animated Design Tools Canvas Background */}
+      <div className="about-canvas">
+        {/* Blueprint Grid */}
+        <div className="about-blueprint-grid"></div>
+        
+        {/* Main Background */}
+        <div className="about-background"></div>
+        
+        {/* Large Background Text */}
+        <div className="about-background-text">ABOUT</div>
+        
+        {/* Design Tools Elements */}
+        <div className="design-elements">
+          {designTools.map((tool, index) => (
+            <div key={index} className={`design-tool ${tool.className}`}>
+              {tool.svg}
+            </div>
+          ))}
+        </div>
+        
+        {/* Floating Company Logos */}
+        <div className="floating-logos">
+          <div className="floating-logo logo-1">
+            <img 
+              src="https://res.cloudinary.com/dylpck2et/image/upload/v1752879878/Asset_1_cfkepa.svg" 
+              alt="TL GLOBAL Logo"
+            />
+          </div>
+          <div className="floating-logo logo-2">
+            <img 
+              src="https://res.cloudinary.com/dylpck2et/image/upload/v1752879878/Asset_1_cfkepa.svg" 
+              alt="TL GLOBAL Logo"
+            />
+          </div>
+          <div className="floating-logo logo-3">
+            <img 
+              src="https://res.cloudinary.com/dylpck2et/image/upload/v1752879878/Asset_1_cfkepa.svg" 
+              alt="TL GLOBAL Logo"
+            />
+          </div>
+        </div>
+        
+        {/* Paint Splashes */}
+        <div className="paint-splashes">
+          <div className="paint-splash splash-1"></div>
+          <div className="paint-splash splash-2"></div>
+          <div className="paint-splash splash-3"></div>
+          <div className="paint-splash splash-4"></div>
+        </div>
+      </div>
+
       <div className="about-container">
         {/* Hero Section */}
         <div className="about-hero">
           <div className="about-hero-content">
             <div className="about-badge">
+              <div className="badge-dot"></div>
               <span>À propos de nous</span>
             </div>
             <h2 className="about-title">
@@ -122,8 +248,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Values Section - Removed */}
-
         {/* Location & Map Section */}
         <div className="about-location">
           <div className="location-content">
@@ -178,7 +302,7 @@ const About = () => {
             <div className="location-map">
               <div className="map-container">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.746!2d-6.5865106!3d34.2618698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76b5ed40be9e9%3A0x1280004cd9c1d0ff!2sWardd%20Music!5e0!3m2!1sen!2sma!4v1690000000000!5m2!1sen!2sma"
+                  src="https://www.google.com/search?sca_esv=6ae216d7b0896bf7&hl=fr&gl=fr&output=search&kgmid=%2Fg%2F11m5kjnsv8&q=STE%20TL%20GLOBAL&shndl=30&shem=lcuae%2Clsptb2%2Csdl1p%2Cuaasie&source=sh%2Fx%2Floc%2Funi%2Fm1%2F3&kgs=ed0e1df4f6a36ecf"
                   width="100%"
                   height="400"
                   style={{ border: 0, borderRadius: '20px' }}
