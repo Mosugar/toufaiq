@@ -7,18 +7,18 @@ const Footer = () => {
   const services = [
     'Aménagements intérieurs',
     'Rénovation complète',
-    'Finitions soignées',
-    'Mobilier sur mesure',
     'Design & Conception',
+    'Mobilier sur mesure',
+    'Finitions premium',
     'Gestion de projet'
   ];
 
   const quickLinks = [
+    { name: 'Accueil', href: '#home' },
     { name: 'À propos', href: '#about' },
-    { name: 'Nos services', href: '#services' },
+    { name: 'Services', href: '#services' },
     { name: 'Projets', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Devis gratuit', href: '#contact' }
+    { name: 'Contact', href: '#contact' }
   ];
 
   const socialLinks = [
@@ -62,42 +62,43 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      {/* Dynamic Background */}
-      <div className="footer-background">
-        <div className="footer-bg-gradient"></div>
-        <div className="footer-floating-elements">
-          {[...Array(10)].map((_, i) => (
-            <div 
-              key={i} 
-              className={`footer-floating-dot footer-dot-${i}`}
-            ></div>
-          ))}
-        </div>
+      {/* Elegant Background */}
+      <div className="footer-bg">
+        <div className="footer-pattern"></div>
+        <div className="footer-glow"></div>
       </div>
 
       <div className="footer-container">
         {/* Main Footer Content */}
         <div className="footer-main">
-          {/* Left Section - Brand & Contact */}
+          {/* Company Section */}
           <div className="footer-brand">
-            <div className="footer-logo">
+            <div className="brand-logo">
               <img 
                 src="https://res.cloudinary.com/dylpck2et/image/upload/v1752879878/Asset_1_cfkepa.svg" 
                 alt="TL GLOBAL" 
-                className="footer-logo-img"
+                className="logo-img"
               />
-              <div className="footer-brand-text">
-                <h3 className="footer-brand-name">TL GLOBAL</h3>
-                <span className="footer-brand-subtitle">SARL</span>
+              <div className="brand-text">
+                <h3 className="brand-name">TL GLOBAL</h3>
+                <span className="brand-tagline">Aménagements intérieurs</span>
               </div>
             </div>
             
-            <p className="footer-description">
-              Créateur d'espaces d'exception au Maroc. Nous transformons vos idées en réalités 
-              avec passion, expertise et un souci constant du détail.
+            <p className="brand-description">
+              Créateurs d'espaces d'exception depuis 2016. Nous transformons vos idées 
+              en réalités grâce à notre expertise et notre passion pour l'excellence.
             </p>
 
-            <div className="footer-contact">
+            <div className="contact-info">
+              <div className="contact-item">
+                <svg className="contact-icon" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+                <span>Salé, Maroc</span>
+              </div>
+              
               <div className="contact-item">
                 <svg className="contact-icon" viewBox="0 0 24 24" fill="none">
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" strokeWidth="2"/>
@@ -112,20 +113,12 @@ const Footer = () => {
                 </svg>
                 <span>contact@tlglobal.ma</span>
               </div>
-              
-              <div className="contact-item">
-                <svg className="contact-icon" viewBox="0 0 24 24" fill="none">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" strokeWidth="2"/>
-                  <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="2"/>
-                </svg>
-                <span>Salé, Maroc 🇲🇦</span>
-              </div>
             </div>
           </div>
 
-          {/* Center Section - Services */}
+          {/* Services Section */}
           <div className="footer-section">
-            <h4 className="footer-section-title">Nos Services</h4>
+            <h4 className="section-title">Nos Services</h4>
             <ul className="footer-links">
               {services.map((service, index) => (
                 <li key={index} className="footer-link-item">
@@ -137,9 +130,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Right Section - Quick Links */}
+          {/* Quick Links Section */}
           <div className="footer-section">
-            <h4 className="footer-section-title">Liens Rapides</h4>
+            <h4 className="section-title">Navigation</h4>
             <ul className="footer-links">
               {quickLinks.map((link, index) => (
                 <li key={index} className="footer-link-item">
@@ -150,18 +143,11 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-        </div>
 
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <div className="footer-bottom-left">
-            <p className="footer-copyright">
-              © {currentYear} TL GLOBAL SARL. Tous droits réservés.
-            </p>
-          </div>
-          
-          <div className="footer-bottom-center">
-            <div className="footer-social">
+          {/* Social & Newsletter */}
+          <div className="footer-section">
+            <h4 className="section-title">Suivez-nous</h4>
+            <div className="social-links">
               {socialLinks.map((social, index) => (
                 <a 
                   key={index}
@@ -175,14 +161,76 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            
+            <div className="newsletter">
+              <h5 className="newsletter-title">Restez informé</h5>
+              <p className="newsletter-text">
+                Recevez nos dernières réalisations et conseils d'aménagement
+              </p>
+              <div className="newsletter-form">
+                <input 
+                  type="email" 
+                  placeholder="Votre email"
+                  className="newsletter-input"
+                />
+                <button className="newsletter-btn">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-left">
+            <p className="copyright">
+              © {currentYear} TL GLOBAL. Tous droits réservés.
+            </p>
+          </div>
+          
+          <div className="footer-bottom-center">
+            <div className="footer-badges">
+              <span className="quality-badge">✨ Qualité Premium</span>
+              <span className="location-badge">🇲🇦 Made in Morocco</span>
+            </div>
           </div>
           
           <div className="footer-bottom-right">
-            <span className="footer-location">@tlglobal_maroc</span>
+            <div className="website-credit">
+              <span className="credit-text">Site web créé par</span>
+              <a 
+                href="https://www.warddstudio.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="wardd-link"
+              >
+                <div className="wardd-logo-container">
+                  <img 
+                    src="https://res.cloudinary.com/dylpck2et/image/upload/v1749577159/Logo_wardd_studios_inwre5.png"
+                    alt="Wardd Studios"
+                    className="wardd-logo"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'block';
+                    }}
+                  />
+                  <svg className="wardd-fallback" viewBox="0 0 24 24" fill="none" style={{display: 'none'}}>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <span className="wardd-text">
+                  <span className="wardd-name">Wardd</span>
+                  <span className="wardd-studio">Studios</span>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      
+
       {/* Decorative Element */}
       <div className="footer-decoration">
         <div className="decoration-line"></div>
