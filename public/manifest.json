@@ -4,24 +4,34 @@
   "description": "Créateurs d'espaces d'exception. Aménagements intérieurs, rénovation et design sur mesure au Maroc.",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/dylpck2et/image/upload/v1752879878/Asset_1_cfkepa.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    },
-    {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://res.cloudinary.com/dylpck2et/image/upload/c_scale,w_192,h_192,f_png/v1752879878/Asset_1_cfkepa.svg",
+      "src": "favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://res.cloudinary.com/dylpck2et/image/upload/c_scale,w_512,h_512,f_png/v1752879878/Asset_1_cfkepa.svg",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
   "start_url": ".",
