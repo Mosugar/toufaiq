@@ -4,6 +4,7 @@ import Header from './components/Header/Header.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Services from './components/Services/Services.jsx';
 import About from './components/about/About.jsx';
+import Projects from './components/projects/Projects.jsx';
 import Contact from './components/contact/Contact.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
@@ -19,6 +20,7 @@ function App() {
       
       <Services />
       <About />
+      <Projects />
       
    
       <Contact />
