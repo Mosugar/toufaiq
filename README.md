@@ -1,3 +1,3 @@
 git commit -m "Your commit message
 
-Co-authored-by: John Doe <john@example.com>"
+Co-authored-by: ali yara <ali.yara.fr@gmail.com>"
